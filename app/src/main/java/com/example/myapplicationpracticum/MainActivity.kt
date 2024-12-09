@@ -10,6 +10,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val Button = findViewById<Button>(R.id.button)
+        val button = findViewById<Button>(R.id.button2)
+
+        // Navigate to the next page
+        Button.setOnClickListener {
+            // Intent to move from MainActivity to NextActivity
+            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            startActivity(intent)
+        }
+
+        //Exit app
+        button.setOnClickListener {
+            finishAffinity()
+        }
 
         }
     }
